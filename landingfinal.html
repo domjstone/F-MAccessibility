@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chairman's Pantry - Exquisite Hampers & Gifts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+
+        /* Swiper.js Custom Styles */
+            .swiper-container {
+                width: 100%;
+                height: 256px; /* h-64 */
+            }
+
+            .swiper-pagination-bullet {
+                background-color: #C6A875; /* Gold */
+                opacity: 0.7;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: #3D3D3D; /* Dark Grey */
+                opacity: 1;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: #3D3D3D; /* Dark Grey */
+                background-color: rgba(255, 255, 255, 0.7);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: opacity 0.3s ease;
+                opacity: 0; /* Hide by default */
+            }
+
+            /* Show arrows on hover */
+            .swiper-container:hover .swiper-button-prev,
+            .swiper-container:hover .swiper-button-next {
+                opacity: 1;
+            }
+
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+    
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FDFBF8; /* A very light cream, for a warm, premium feel */
+            color: #3D3D3D; /* Dark grey for better contrast than pure black */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-primary { background-color: #A2C2B1; } /* Eau de Nil */
+        .text-primary { color: #3D3D3D; } /* Dark Grey for contrast on primary backgrounds */
+        .bg-secondary { background-color: #C6A875; } /* A sophisticated gold/brass accent */
+        .text-secondary { color: #AE8A54;; }
+        .border-secondary { border-color: #C6A875; }
+
+        /* Accessibility: Focus styles for keyboard navigation */
+        :focus-visible {
+            outline: 3px solid #C6A875;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 5px rgba(10, 61, 98, 0.4);
+            border-radius: 2px;
+        }
+        
+        /* Skip to content link for screen reader and keyboard users */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0A3D62;
+            color: #FFFFFF;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Ensure sufficient contrast for placeholder text */
+        ::placeholder {
+            color: #6c757d; /* WCAG AA compliant grey on white */
+            opacity: 1; /* Override browser defaults */
+        }
+        
+        .hero-bg {
+             background-color: #EAE7E2; /* A subtle, textured light beige */
+        }
+    </style>
+</head>
+<body>
+    <!-- WCAG: Skip to content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header class="bg-primary text-primary shadow-md sticky top-0 z-50" aria-label="Header">
+        <!-- Top bar with logo and icons -->
+        <div class="container mx-auto px-6 py-4">
+            <div class="relative flex justify-center items-center h-full">
+                <!-- Mobile Menu Button -->
+                <div class="absolute left-0 md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Logo -->
+                <a href="#" class="text-2xl md:text-3xl font-bold whitespace-nowrap" aria-label="The Chairman's Pantry, Homepage">
+                    The Chairman's Pantry
+                </a>
+                
+                <!-- Desktop Icons -->
+                <div class="hidden md:flex items-center space-x-6 absolute right-0">
+                     <a href="#" aria-label="My Account">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                     </a>
+                     <a href="#" aria-label="View your shopping basket, 0 items">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                     </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex container mx-auto justify-center items-center space-x-12 py-3 border-t border-gray-400/30" role="navigation" aria-label="Main navigation">
+            <a href="#" class="hover:text-secondary transition duration-300">Hampers</a>
+            <a href="#" class="hover:text-secondary transition duration-300">Wine & Spirits</a>
+            <a href="#" class="hover:text-secondary transition duration-300">Corporate Gifting</a>
+            <a href="#" class="hover:text-secondary transition duration-300">About Us</a>
+        </nav>
+        
+        <!-- 
+            Mobile Navigation Menu (Dialog)
+            ACCESSIBILITY NOTE: This dialog is given an accessible name via the `aria-labelledby` attribute,
+            which points to the `h2` element with the id `mobile-menu-title`. This ensures screen readers
+            can announce the purpose of the dialog when it opens.
+        -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-400/30" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                 <h2 id="mobile-menu-title" class="sr-only">Main Menu</h2>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Hampers</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Wine & Spirits</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Corporate Gifting</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About Us</a>
+                 <hr class="border-gray-600 my-2">
+                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">My Account</a>
+                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Basket</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-bg py-16 md:py-24" aria-labelledby="hero-title">
+            <div class="container mx-auto px-6">
+                
+                <!-- Card with background image and overlaid text -->
+                <div class="relative max-w-6xl h-[70vh] min-h-[500px] mx-auto rounded-lg overflow-hidden shadow-2xl flex items-end justify-center">
+                    <!-- Background Image -->
+                    <img src="christmas.webp" 
+                         alt="A festive collection of Christmas cakes, wine, and luxury gifts against a dark background." 
+                         class="w-full h-full object-cover absolute">
+                    
+                    <!-- Overlay to darken image for better text contrast -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+
+                    <!-- Centered Text Box at the bottom -->
+                    <div class="relative bg-white p-8 max-w-lg mx-auto text-center mb-12 rounded-md shadow-lg">
+                        <h1 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4">The Christmas Collection</h1>
+                        <p class="text-lg mb-8">Discover our enchanting range of festive hampers, ready for the season of giving.</p>
+                        <a href="#" class="bg-primary text-primary py-3 px-8 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300">Shop Christmas</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Featured Products Section -->
+        <section class="container mx-auto px-6 py-16" aria-labelledby="featured-hampers-title">
+            <h2 id="featured-hampers-title" class="text-3xl md:text-4xl text-center font-bold mb-12">Featured Hampers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Product Card 1 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                   <!-- Swiper component structure -->
+                        <div class="swiper-container product-swiper relative overflow-hidden rounded-t-lg">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                    <a href="#" aria-label="View details for The Mayfair Hamper (Image 1 of 3)">
+                                        <img src="F&M2.webp" 
+                                            alt="An elegant wicker hamper with a blue ribbon. (Image 1 of 3)" 
+                                            class="w-full h-64 object-cover">
+                                    </a>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                    <a href="#" aria-label="View details for The Mayfair Hamper (Image 2 of 3)">
+                                        <img src="biscuits.jpg" 
+                                            alt="A close-up of the biscuits included in The Mayfair Hamper. (Image 2 of 3)" 
+                                            class="w-full h-64 object-cover">
+                                    </a>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide">
+                                    <a href="#" aria-label="View details for The Mayfair Hamper (Image 3 of 3)">
+                                        <img src="chutney.webp" 
+                                            alt="A close up of the Fig and Fennel chutney from The Mayfair Hamper. (Image 3 of 3)" 
+                                            class="w-full h-64 object-cover">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Swiper Pagination -->
+                                <div class="swiper-pagination"></div>
+                            <!-- Swiper Navigation Buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                        </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2"><a href="#">The Mayfair Hamper</a></h3>
+                        <p class="text-gray-600 mb-4">A delightful selection of sweet and savoury treats, perfect for any occasion.</p>
+                        <p class="text-2xl font-bold text-secondary mb-4">£95.00</p>
+                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300" aria-label="Add The Mayfair Hamper to your basket">Add to Basket</a>
+                    </div>
+                </article>
+                <!-- Product Card 2 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                     <!-- Swiper component structure -->
+                     <div class="swiper-container product-swiper relative overflow-hidden rounded-t-lg">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <a href="#" aria-label="View details for The Connoisseur's Choice Hamper (Image 1 of 3)">
+                                    <img src="F&M 1 .png" 
+                                        alt="A view of the whole The Connoisseur's Choice hamper. (Image 1 of 3)" 
+                                        class="w-full h-64 object-cover">
+                                </a>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <a href="#" aria-label="View details for The Connoisseur's Choice Hamper (Image 2 of 3)">
+                                    <img src="wine.webp" 
+                                        alt="A close-up of the red wine (Claret) included in The Connoisseur's Choice Hamper. (Image 2 of 3)" 
+                                        class="w-full h-64 object-cover">
+                                </a>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide">
+                                <a href="#" aria-label="View details for The Connoisseur's Choice Hamper (Image 3 of 3)">
+                                    <img src="honey.webp" 
+                                        alt="A close up of the honey from The Connoisseur's Choice Hamper. (Image 3 of 3)" 
+                                        class="w-full h-64 object-cover">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination -->
+                            <div class="swiper-pagination"></div>
+                        <!-- Swiper Navigation Buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2"><a href="#">The Connoisseur's Choice</a></h3>
+                        <p class="text-gray-600 mb-4">An exquisite collection of fine wines, aged cheeses, and artisanal charcuterie.</p>
+                        <p class="text-2xl font-bold text-secondary mb-4">£175.00</p>
+                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300" aria-label="Add The Connoisseur's Choice Hamper to your basket">Add to Basket</a>
+                    </div>
+                </article>
+                <!-- Product Card 3 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                      <!-- Swiper component structure -->
+                      <div class="swiper-container product-swiper relative overflow-hidden rounded-t-lg">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <a href="#" aria-label="View details for The Chairman's Reserve Hamper (Image 1 of 3)">
+                                    <img src="F&M3.webp" 
+                                        alt="A view of the whole The Chairman's Reserve hamper. (Image 1 of 3)" 
+                                        class="w-full h-64 object-cover">
+                                </a>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <a href="#" aria-label="View details for The Chairman's Reserve Hamper (Image 2 of 3)">
+                                    <img src="champagne.png" 
+                                        alt="A close-up of the champagne included in The Chairman's Reserve Hamper. (Image 2 of 3)" 
+                                        class="w-full h-64 object-cover">
+                                </a>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide">
+                                <a href="#" aria-label="View details for The Chairman's Reserve Hamper (Image 3 of 3)">
+                                    <img src="sparklingwine.webp" 
+                                        alt="A close up of the English Sparkling Wine from The Chairman's Reserve Hamper. (Image 3 of 3)" 
+                                        class="w-full h-64 object-cover">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination -->
+                            <div class="swiper-pagination"></div>
+                        <!-- Swiper Navigation Buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2"><a href="#">The Chairman's Reserve</a></h3>
+                        <p class="text-gray-600 mb-4">The pinnacle of luxury: vintage champagne, rare spirits, and decadent chocolates.</p>
+                        <p class="text-2xl font-bold text-secondary mb-4">£350.00</p>
+                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300" aria-label="Add The Chairman's Reserve Hamper to your basket">Add to Basket</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Our Philosophy Section -->
+        <section class="bg-white py-16" aria-labelledby="philosophy-title">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                 <h2 id="philosophy-title" class="text-3xl md:text-4xl font-bold mb-6">Our Philosophy</h2>
+                 <p class="text-lg text-gray-700 leading-relaxed">
+                    At The Chairman's Pantry, we believe that gifting is an art form. Each hamper is a testament to our commitment to quality, heritage, and the joy of discovery. We partner with small-scale, artisanal producers who share our passion for excellence, ensuring every item tells a story of craftsmanship and dedication.
+                 </p>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-primary text-primary" aria-labelledby="footer-heading">
+        <div class="container mx-auto px-6 py-12">
+            <h2 id="footer-heading" class="sr-only">Footer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">The Chairman's Pantry</h3>
+                    <p>Exquisite hampers and gifts, delivered with care. Est. 2024.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-secondary transition">Hampers</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Delivery Information</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                 <div>
+                    <h3 class="text-lg font-semibold mb-4">Our Policies</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-secondary transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Join our Mailing List</h3>
+                    <p class="mb-4">Receive exclusive offers and news from the Pantry.</p>
+                    <form action="#" method="POST" class="flex flex-col sm:flex-row">
+                        <label for="email-signup" class="sr-only">Email address</label>
+                        <input type="email" id="email-signup" name="email" placeholder="Your email address" required class="w-full bg-white px-4 py-2 rounded-l-md text-gray-800 focus:outline-none" aria-required="true">
+                        <button type="submit" class="bg-secondary text-primary font-bold px-6 py-2 rounded-r-md mt-2 sm:mt-0 hover:bg-opacity-90 transition">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-12 border-t border-gray-400 pt-8 text-center">
+                <p>&copy; 2024 The Chairman's Pantry. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        // Basic mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuButton.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+        });
+
+        // Close menu if user clicks outside of it (for simplicity, we'll just handle focus out)
+        document.addEventListener('focusin', (e) => {
+            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                 isMenuOpen = false;
+                 mobileMenu.classList.add('hidden');
+                 mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+            }
+        });
+
+        // Initialize all product swipers
+        const swipers = document.querySelectorAll('.product-swiper');
+            swipers.forEach(swiperEl => {
+                new Swiper(swiperEl, {
+                    // Optional parameters
+                    loop: true,
+                    grabCursor: true,
+
+                    // Pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // Accessibility features
+                    a11y: {
+                        prevSlideMessage: 'Previous slide',
+                        nextSlideMessage: 'Next slide',
+                        paginationBulletMessage: 'Go to slide {{index}}',
+                    },
+                });
+            });
+    </script>
+</body>
+</html>
+
+
+
+
