@@ -21,7 +21,7 @@
         .bg-primary { background-color: #A2C2B1; } /* Eau de Nil */
         .text-primary { color: #3D3D3D; } /* Dark Grey for contrast on primary backgrounds */
         .bg-secondary { background-color: #C6A875; } /* A sophisticated gold/brass accent */
-        .text-secondary { color: #C6A875; }
+        .text-secondary { color: #AE8A54;; }
         .border-secondary { border-color: #C6A875; }
 
         /* Accessibility: Focus styles for keyboard navigation */
@@ -165,7 +165,7 @@
                         <h3 class="text-2xl font-bold mb-2"><a href="#">The Mayfair Hamper</a></h3>
                         <p class="text-gray-600 mb-4">A delightful selection of sweet and savoury treats, perfect for any occasion.</p>
                         <p class="text-2xl font-bold text-secondary mb-4">£95.00</p>
-                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">Add to Basket</a>
+                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300" aria-label="Add The Mayfair Hamper to your basket">Add to Basket</a>
                     </div>
                 </article>
                 <!-- Product Card 2 -->
@@ -177,7 +177,7 @@
                         <h3 class="text-2xl font-bold mb-2"><a href="#">The Connoisseur's Choice</a></h3>
                         <p class="text-gray-600 mb-4">An exquisite collection of fine wines, aged cheeses, and artisanal charcuterie.</p>
                         <p class="text-2xl font-bold text-secondary mb-4">£175.00</p>
-                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">Add to Basket</a>
+                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300" aria-label="Add The Connoisseur's Choice Hamper to your basket">Add to Basket</a>
                     </div>
                 </article>
                 <!-- Product Card 3 -->
@@ -189,7 +189,7 @@
                         <h3 class="text-2xl font-bold mb-2"><a href="#">The Chairman's Reserve</a></h3>
                         <p class="text-gray-600 mb-4">The pinnacle of luxury: vintage champagne, rare spirits, and decadent chocolates.</p>
                         <p class="text-2xl font-bold text-secondary mb-4">£350.00</p>
-                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">Add to Basket</a>
+                        <a href="#" class="w-full text-center block bg-secondary text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300" aria-label="Add The Chairman's Reserve Hamper to your basket">Add to Basket</a>
                     </div>
                 </article>
             </div>
@@ -208,14 +208,14 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-primary" aria-labelledby="footer-heading">
+    <footer class="bg-primary text-primary" aria-labelledby="footer-heading">
         <div class="container mx-auto px-6 py-12">
             <h2 id="footer-heading" class="sr-only">Footer</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- About Section -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">The Chairman's Pantry</h3>
-                    <p class="text-gray-200">Exquisite hampers and gifts, delivered with care. Est. 2024.</p>
+                    <p>Exquisite hampers and gifts, delivered with care. Est. 2024.</p>
                 </div>
 
                 <!-- Quick Links -->
@@ -242,7 +242,7 @@
                 <!-- Newsletter Signup -->
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Join our Mailing List</h3>
-                    <p class="text-gray-200 mb-4">Receive exclusive offers and news from the Pantry.</p>
+                    <p class="mb-4">Receive exclusive offers and news from the Pantry.</p>
                     <form action="#" method="POST" class="flex flex-col sm:flex-row">
                         <label for="email-signup" class="sr-only">Email address</label>
                         <input type="email" id="email-signup" name="email" placeholder="Your email address" required class="w-full bg-white px-4 py-2 rounded-l-md text-gray-800 focus:outline-none" aria-required="true">
@@ -251,7 +251,7 @@
                 </div>
             </div>
 
-            <div class="mt-12 border-t border-gray-400 pt-8 text-center text-gray-400">
+            <div class="mt-12 border-t border-gray-400 pt-8 text-center">
                 <p>&copy; 2024 The Chairman's Pantry. All Rights Reserved.</p>
             </div>
         </div>
